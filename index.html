@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101915">
+<title>OFFICINE KEBA TOURE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="#home">KEBA TOURE<span>+</span></a>
+  <nav class="desktop-nav">
+    <a href="#products">Produits</a><a href="#categories">Catégories</a><a href="#para">Parapharmacie</a><a href="#advice">Conseils</a><a href="#prescription">Ordonnance</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="openSearch" aria-label="Rechercher">⌕</button>
+    <button class="icon-btn mobile-only" id="openMenu" aria-label="Menu">☰</button>
+    <button class="icon-btn" id="openCart" aria-label="Panier">▢<b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products">Produits</a><a href="#categories">Catégories</a><a href="#para">Parapharmacie</a><a href="#advice">Conseils</a><a href="#prescription">Ordonnance</a>
+</div>
+
+<main>
+<section class="stage hero-stage" id="home">
+  <div class="sticky dark">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-center">
+      <p class="mono">PHARMACIE · PARAPHARMACIE · CONSEIL</p>
+      <h1 class="display hero-title split">LA SANTÉ COMMENCE PAR LE BON CONSEIL</h1>
+      <div class="hero-logo">KEBA TOURE<span>+</span></div>
+    </div>
+    <div class="hero-meta mono"><span>PHARMACIE / 01</span><span>VOTRE SANTÉ · NOTRE CONSEIL</span></div>
+  </div>
+</section>
+
+<section class="stage manifesto-stage">
+  <div class="sticky cream center">
+    <div class="manifesto display">
+      <div class="manifesto-base">UN BON PRODUIT EST IMPORTANT. UN BON CONSEIL L'EST ENCORE PLUS.</div>
+      <div class="manifesto-fill">UN BON PRODUIT EST IMPORTANT. UN BON CONSEIL L'EST ENCORE PLUS.</div>
+    </div>
+  </div>
+</section>
+
+<section class="stage products-stage" id="products">
+  <div class="sticky cream product-pin">
+    <div class="section-head">
+      <div><span class="mono">CATALOGUE / 02</span><h2 class="display split">À LA UNE</h2></div>
+      <span class="mono">SCROLLEZ POUR EXPLORER</span>
+    </div>
+    <div class="product-window"><div class="product-rail" id="productRail"></div></div>
+    <div class="progress"><i id="railProgress"></i></div>
+  </div>
+</section>
+
+<section class="stage spotlight-stage">
+  <div class="sticky dark spotlight">
+    <div class="spot-copy">
+      <span class="mono muted-white">PRODUCT SPOTLIGHT / 03</span>
+      <h2 class="display split">CHOISIR. COMPRENDRE. UTILISER.</h2>
+      <p>Découvrez les informations essentielles avant d'utiliser un produit. Pour toute situation particulière, demandez conseil nous sommes la.</p>
+      <div class="cues">
+        <div class="cue">01 · INDICATION</div>
+        <div class="cue">02 · UTILISATION</div>
+        <div class="cue">03 · PRÉCAUTIONS</div>
+        <div class="cue">04 · CONSEIL PHARMACIEN</div>
+      </div>
+      <div class="mono status" id="spotStatus">ANALYSE DU PRODUIT...</div>
+    </div>
+    <div class="packet-wrap">
+      <article class="packet" id="packet">
+        <div class="packet-brand">KEBA TOURE<span>+</span></div>
+        <span class="mono">DERMATOLOGIE · SOIN VISAGE</span>
+        <h3 class="display">EFFACLAR<br>GEL</h3>
+        <div class="packet-image"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80" alt="Soin cosmétique"></div>
+        <div class="packet-data">
+          <div><span class="mono">LOT</span><strong id="lot">—</strong></div>
+          <div><span class="mono">TEST</span><strong id="test">PENDING</strong></div>
+          <div><span class="mono">FENÊTRE</span><strong id="window">—</strong></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="prescription" id="prescription">
+  <div>
+    <span class="mono">SERVICE / ORDONNANCE</span>
+    <h2 class="display split">VOTRE ORDONNANCE, NOTRE VIGILANCE.</h2>
+    <p>Déposez votre document pour préparer votre demande. La validation par le pharmacien intervient lorsque cela est nécessaire.</p>
+  </div>
+  <div class="document">
+    <div class="document-top"><strong>ORDONNANCE</strong><span class="mono">KEBA TOURE+ / RX</span></div>
+    <label class="dropzone" id="dropzone">
+      <span class="upload-icon">↑</span>
+      <strong>GLISSEZ VOTRE ORDONNANCE ICI</strong>
+      <small>PDF · JPG · PNG</small>
+      <span class="upload-btn">CHOISIR UN FICHIER</span>
+      <input type="file" id="prescriptionFile" accept=".pdf,.jpg,.jpeg,.png">
+      <em id="fileName"></em>
+    </label>
+    <small class="mono">VALIDATION PAR LE PHARMACIEN LORSQUE NÉCESSAIRE.</small>
+  </div>
+</section>
+
+<section class="categories" id="categories">
+  <span class="mono">CATALOGUE / 05</span>
+  <h2 class="display split">TROUVEZ VOTRE UNIVERS</h2>
+  <div class="category-grid" id="categoryGrid"></div>
+</section>
+
+<section class="parapharmacie" id="para">
+  <span class="mono">PARAPHARMACIE / 06</span>
+  <h2 class="display split">PRENDRE SOIN DE SOI</h2>
+  <div class="filters" id="filters"></div>
+  <div class="para-grid" id="paraGrid"></div>
+</section>
+
+<section class="advice" id="advice">
+  <span class="mono">CONSEILS / 07</span>
+  <div class="advice-grid">
+    <h2 class="display split">COMPRENDRE AVANT DE CHOISIR.</h2>
+    <div class="chapters">
+      <article class="chapter active"><span class="mono">01</span><h3>COMPRENDRE</h3><p>Identifier le besoin et les caractéristiques du produit.</p></article>
+      <article class="chapter"><span class="mono">02</span><h3>CHOISIR</h3><p>Comparer les formats, usages et précautions.</p></article>
+      <article class="chapter"><span class="mono">03</span><h3>UTILISER</h3><p>Respecter la notice et demander conseil en cas de doute.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="search-section" id="searchSection">
+  <span class="mono">RECHERCHE / 08</span>
+  <input id="searchInput" class="big-search" placeholder="Rechercher un médicament, une marque ou un produit...">
+  <div id="searchResults"></div>
+</section>
+
+<section class="price-section">
+  <span class="mono">CATALOGUE / 09</span>
+  <h2 class="display split">PRIX & DISPONIBILITÉ</h2>
+  <div class="table-wrap"><table><thead><tr><th>Produit</th><th>Catégorie</th><th>Format</th><th>Prix</th><th>Statut</th></tr></thead><tbody id="priceTable"></tbody></table></div>
+</section>
+
+<section class="faq">
+  <span class="mono">FAQ / 10</span>
+  <h2 class="display split">QUESTIONS FRÉQUENTES</h2>
+  <details><summary>Comment commander un médicament ?</summary><p>Recherchez le produit, vérifiez les informations disponibles puis ajoutez-le au panier lorsqu'il est commandable. Certaines délivrances nécessitent une validation.</p></details>
+  <details><summary>Puis-je envoyer mon ordonnance ?</summary><p>Oui, cette interface permet de sélectionner un PDF ou une image. Le document doit ensuite être vérifié selon les règles applicables.</p></details>
+  <details><summary>Comment demander conseil ?</summary><p>Le site peut être relié à un canal de contact direct avec votre pharmacie ou à un système de messagerie.</p></details>
+  <details><summary>Comment fonctionne la livraison ?</summary><p>Les zones, tarifs et délais doivent être configurés selon votre pharmacie et votre service de livraison.</p></details>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo display">KEBA TOURE<span>+</span></div>
+  <p>VOTRE SANTÉ. NOTRE CONSEIL.</p>
+  <div class="footer-grid">
+    <div><span class="mono">PRODUITS</span><a href="#products">Médicaments</a><a href="#para">Parapharmacie</a><a href="#categories">Catégories</a></div>
+    <div><span class="mono">CONSEILS</span><a href="#advice">Conseils santé</a><a href="#prescription">Ordonnance</a><a href="#">FAQ</a></div>
+    <div><span class="mono">CONTACT</span><a href="tel:+22300000000">+223 XX XX XX XX</a><a href="mailto:contact@pharma.example">contact@pharma.example</a><a href="#">Bamako, Mali</a></div>
+    <div><span class="mono">LÉGAL</span><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">CGV</a></div>
+  </div>
+  <small>© 2026 PHARMA+ · ALL RIGT RESERVED</small>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="drawer-head"><h2 class="display">PANIER</h2><button id="closeCart">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>TOTAL</span><strong id="cartTotal">0 FCFA</strong></div>
+  <button class="checkout" id="checkout">PASSER LA COMMANDE</button>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
