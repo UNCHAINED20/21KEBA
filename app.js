@@ -114,3 +114,30 @@ $$(".split").forEach(x=>revealObserver.observe(x));
 
 const chapterObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){let r=e.target.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height))),i=Math.min(2,Math.floor(p*3));$$(".chapter").forEach((c,n)=>c.classList.toggle("active",n===i))}}),{threshold:[.2,.5,.8]});
 $$(".chapter").forEach(x=>chapterObs.observe(x));
+
+const loginForm = document.querySelector("#kebaLoginForm");
+const loginName = document.querySelector("#kebaLoginName");
+const loginCode = document.querySelector("#kebaLoginCode");
+const loginError = document.querySelector("#kebaLoginError");
+const kebaLogin = document.querySelector("#kebaLogin");
+
+loginForm?.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const name = loginName.value.trim();
+  const code = loginCode.value.trim().toUpperCase();
+
+  if (name.length < 2) {
+    loginError.textContent = "Veuillez entrer votre nom.";
+    return;
+  }
+
+  if (code !== "KEBA2026") {
+    loginError.textContent = "Code d'accès incorrect.";
+    return;
+  }
+
+  localStorage.setItem("keba_user", name);
+  kebaLogin.classList.add("is-hidden");
+  document.body.classList.remove("keba-auth-locked");
+});
