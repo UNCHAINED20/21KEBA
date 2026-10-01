@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101915">
 <title>OFFICINE KEBA TOURE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,65 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- KÉBA PHAR — elegant demo login layer -->
+<section class="keba-login" id="kebaLogin" aria-label="Connexion KÉBA PHAR">
+  <div class="keba-login-glow keba-login-glow-a"></div>
+  <div class="keba-login-glow keba-login-glow-b"></div>
+
+  <div class="keba-login-card">
+    <div class="keba-login-brand">
+      <div class="keba-login-mark" aria-hidden="true">
+        <span></span><span></span>
+      </div>
+      <div>
+        <div class="keba-login-wordmark">KÉBA PHAR<span>+</span></div>
+        <div class="keba-login-sub">PHARMACIE · PARAPHARMACIE · CONSEIL</div>
+      </div>
+    </div>
+
+    <div class="keba-login-copy">
+      <span class="mono">ESPACE CLIENT / 01</span>
+      <h1 class="display">VOTRE SANTÉ,<br><em>NOTRE ATTENTION.</em></h1>
+      <p>Connectez-vous pour accéder à votre espace, vos demandes et votre panier.</p>
+    </div>
+
+    <form class="keba-login-form" id="kebaLoginForm" novalidate>
+      <label>
+        <span>Nom</span>
+        <input id="kebaLoginName" type="text" autocomplete="name" placeholder="Votre nom" required>
+      </label>
+
+      <label>
+        <span>Code d'accès</span>
+        <div class="keba-code-field">
+          <input id="kebaLoginCode" type="password" inputmode="text" autocomplete="off"
+                 placeholder="Votre code d'accès" required>
+          <button type="button" id="kebaToggleCode" aria-label="Afficher le code">Afficher</button>
+        </div>
+      </label>
+
+      <div class="keba-login-error" id="kebaLoginError" role="alert"></div>
+
+      <button class="keba-login-submit" type="submit">
+        <span>Entrer dans mon espace</span>
+        <b aria-hidden="true">→</b>
+      </button>
+
+      <div class="keba-login-note">
+        <span class="keba-shield" aria-hidden="true">✓</span>
+        <span>Interface de démonstration · Connexion locale</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="keba-login-bottom">
+    <span>KEBA PHAR</span>
+    <span>VOTRE SANTÉ · NOTRE CONSEIL</span>
+    <span>© 2026</span>
+  </div>
+</section>
+
 <header class="navbar">
   <a class="logo" href="#home">KEBA TOURE<span>+</span></a>
   <nav class="desktop-nav">
