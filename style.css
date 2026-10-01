@@ -246,25 +246,3 @@ body.keba-auth-locked{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .keba-login,.keba-login-submit,.keba-login-form input,.category,.product-card{transition:none}
 }
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-.keba-login-card {
-  width: min(100%, 520px);
-  max-width: 100%;
-}
-
-.keba-login-copy h1 {
-  max-width: 100%;
-  font-size: clamp(34px, 11vw, 62px);
-  line-height: .9;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
